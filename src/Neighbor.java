@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Neighbor {
-       private static final String FILE_NAME = "C:/tsp/5xy.txt";
 
-    public static void main(String[] args) {
+
+    public static void run(String filepath)  {
         long startTime = System.currentTimeMillis();
 
-        double[][] coordinates = CoordinateReader.readCoordinatesFromFile(FILE_NAME);
+        double[][] coordinates = CoordinateReader.readCoordinatesFromFile(filepath);
         ArrayList<Integer> shortestPath = nearestNeighbor(coordinates);
         double shortestDistance = calculateTourDistance(coordinates, shortestPath);
         System.out.println("Bulunabilecek en optimum sonuç: " + shortestPath.toString());

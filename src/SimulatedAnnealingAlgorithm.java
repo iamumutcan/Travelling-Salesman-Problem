@@ -25,13 +25,14 @@ public class SimulatedAnnealingAlgorithm {
             temperature *= 1 - coolingRate;
         }
 
-        System.out.print("Bulunabilecek en optimum sonuç: ");
+        System.out.print("Bulunabilecek en optimum sonuç: [");
         for (int i = 0; i < bestPath.length; i++) {
-            System.out.print(bestPath[i] + 1);
+            System.out.print(bestPath[i] );
             if (i < bestPath.length - 1) {
                 System.out.print(", ");
             }
         }
+        System.out.print("]");
         System.out.println();
         System.out.println("Yol uzunluğu: " + bestDistance);
         long endTime = System.currentTimeMillis();

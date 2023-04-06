@@ -2,10 +2,10 @@ import java.util.*;
 
 public class TwoOptAlgorithm {
 
-    public static void main(String[] args) {
+    public static void run(String filepath) {
         long startTime = System.currentTimeMillis();
 
-        double[][] coordinates = CoordinateReader.readCoordinatesFromFile("C:/tsp/5xy.txt");
+        double[][] coordinates = CoordinateReader.readCoordinatesFromFile(filepath);
         int[] path = twoOpt(coordinates);
         System.out.println("Bulunabilecek en optimum sonuç: " + Arrays.toString(path));
         double distance = pathDistance(coordinates, path);
