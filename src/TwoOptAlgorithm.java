@@ -3,11 +3,17 @@ import java.util.*;
 public class TwoOptAlgorithm {
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+
         double[][] coordinates = CoordinateReader.readCoordinatesFromFile("C:/tsp/5xy.txt");
         int[] path = twoOpt(coordinates);
         System.out.println("Bulunabilecek en optimum sonuç: " + Arrays.toString(path));
         double distance = pathDistance(coordinates, path);
         System.out.println("Yol uzunluğu: " + distance);
+
+        long endTime = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println("İşlem süresi: " + totalTime + " milisaniye");
     }
     public static double pathDistance(double[][] coordinates, int[] path) {
         double distance = 0;

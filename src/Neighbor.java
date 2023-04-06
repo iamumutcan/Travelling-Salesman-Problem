@@ -7,13 +7,15 @@ public class Neighbor {
        private static final String FILE_NAME = "C:/tsp/5xy.txt";
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+
         double[][] coordinates = CoordinateReader.readCoordinatesFromFile(FILE_NAME);
         ArrayList<Integer> shortestPath = nearestNeighbor(coordinates);
-        long startTime = System.currentTimeMillis();
         double shortestDistance = calculateTourDistance(coordinates, shortestPath);
-        long endTime = System.currentTimeMillis();
         System.out.println("Bulunabilecek en optimum sonuç: " + shortestPath.toString());
         System.out.println("Yol uzunluğu: " + shortestDistance);
+
+        long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
         System.out.println("İşlem süresi: " + totalTime + " milisaniye");
 
